@@ -52,13 +52,12 @@ class TestAccountService(TestCase):
         """Runs once after each test case"""
         db.session.remove()
 
-
     ######################################################################
     #  H E L P E R   M E T H O D S
     ######################################################################
-
     def _create_accounts(self, count):
         """Factory method to create accounts in bulk"""
+
         accounts = []
         for _ in range(count):
             account = AccountFactory()
@@ -190,3 +189,4 @@ class TestAccountService(TestCase):
         }
         for key, value in headers.items():
             self.assertEqual(response.headers.get(key), value)
+# End of file.
